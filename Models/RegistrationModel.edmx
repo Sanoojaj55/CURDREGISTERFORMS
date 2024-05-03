@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="REGISTRATIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="Edu_Id" />
+          </Key>
+          <Property Name="Edu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Degree" Type="varchar" MaxLength="50" />
+          <Property Name="Course" Type="varchar" MaxLength="50" />
+          <Property Name="Program_course" Type="varchar" MaxLength="50" />
+          <Property Name="Elective" Type="varchar" MaxLength="50" />
+          <Property Name="CollegeName" Type="varchar" MaxLength="50" />
+          <Property Name="UniversityName" Type="varchar" MaxLength="50" />
+          <Property Name="fromYear" Type="date" />
+          <Property Name="Toyear" Type="date" />
+          <Property Name="percentageYear" Type="int" />
+          <Property Name="GDate" Type="date" />
+          <Property Name="self_Id_fk" Type="int" />
+        </EntityType>
+        <EntityType Name="Experiance">
+          <Key>
+            <PropertyRef Name="Exp_Id" />
+          </Key>
+          <Property Name="Exp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName1" Type="varchar" MaxLength="50" />
+          <Property Name="YearOF1" Type="date" />
+          <Property Name="Position1" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName2" Type="varchar" MaxLength="50" />
+          <Property Name="YearOF2" Type="date" />
+          <Property Name="Position2" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName3" Type="varchar" MaxLength="50" />
+          <Property Name="YearOF3" Type="date" />
+          <Property Name="Position3" Type="varchar" MaxLength="50" />
+          <Property Name="self_Id_fk_fk" Type="int" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Gnder_ID" />
+          </Key>
+          <Property Name="Gnder_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="selfe_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="L_Id" />
+          </Key>
+          <Property Name="L_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language1" Type="varchar" MaxLength="50" />
+          <Property Name="read1" Type="bit" />
+          <Property Name="write1" Type="bit" />
+          <Property Name="speak1" Type="bit" />
+          <Property Name="understand1" Type="bit" />
+          <Property Name="Language2" Type="varchar" MaxLength="50" />
+          <Property Name="read2" Type="bit" />
+          <Property Name="write2" Type="bit" />
+          <Property Name="speak2" Type="bit" />
+          <Property Name="understand2" Type="bit" />
+          <Property Name="Language3" Type="varchar" MaxLength="50" />
+          <Property Name="read3" Type="bit" />
+          <Property Name="write3" Type="bit" />
+          <Property Name="speak3" Type="bit" />
+          <Property Name="understand3" Type="bit" />
+          <Property Name="Language4" Type="varchar" MaxLength="50" />
+          <Property Name="read4" Type="bit" />
+          <Property Name="write4" Type="bit" />
+          <Property Name="speak4" Type="bit" />
+          <Property Name="understand4" Type="bit" />
+          <Property Name="self_FK" Type="int" />
+        </EntityType>
+        <EntityType Name="selfInformation">
+          <Key>
+            <PropertyRef Name="self_Id" />
+          </Key>
+          <Property Name="self_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="MiddileName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DateofBirth" Type="date" />
+          <Property Name="PhoneNumber" Type="int" />
+          <Property Name="PhoneNumber2" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="PresentAddress" Type="varchar" MaxLength="200" />
+          <Property Name="PermanentAdress" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK__Education__self___5165187F">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="self_Id_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experianc__self___5441852A">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Experiance" Type="Self.Experiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Experiance">
+              <PropertyRef Name="self_Id_fk_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Genders__selfe_I__5CD6CB2B">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Genders" Type="Self.Genders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Genders">
+              <PropertyRef Name="selfe_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Languages__self___4E88ABD4">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Languages" Type="Self.Languages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Languages">
+              <PropertyRef Name="self_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="REGISTRATIONModelStoreContainer">
+          <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Experiance" EntityType="Self.Experiance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="selfInformation" EntityType="Self.selfInformation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Education__self___5165187F" Association="Self.FK__Education__self___5165187F">
+            <End Role="selfInformation" EntitySet="selfInformation" />
+            <End Role="Education" EntitySet="Education" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experianc__self___5441852A" Association="Self.FK__Experianc__self___5441852A">
+            <End Role="selfInformation" EntitySet="selfInformation" />
+            <End Role="Experiance" EntitySet="Experiance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Genders__selfe_I__5CD6CB2B" Association="Self.FK__Genders__selfe_I__5CD6CB2B">
+            <End Role="selfInformation" EntitySet="selfInformation" />
+            <End Role="Genders" EntitySet="Genders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Languages__self___4E88ABD4" Association="Self.FK__Languages__self___4E88ABD4">
+            <End Role="selfInformation" EntitySet="selfInformation" />
+            <End Role="Languages" EntitySet="Languages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="REGISTRATIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="Edu_Id" />
+          </Key>
+          <Property Name="Edu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Program_course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Elective" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CollegeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UniversityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fromYear" Type="DateTime" Precision="0" />
+          <Property Name="Toyear" Type="DateTime" Precision="0" />
+          <Property Name="percentageYear" Type="Int32" />
+          <Property Name="GDate" Type="DateTime" Precision="0" />
+          <Property Name="self_Id_fk" Type="Int32" />
+          <NavigationProperty Name="selfInformation" Relationship="Self.FK__Education__self___5165187F" FromRole="Education" ToRole="selfInformation" />
+        </EntityType>
+        <EntityType Name="Experiance">
+          <Key>
+            <PropertyRef Name="Exp_Id" />
+          </Key>
+          <Property Name="Exp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearOF1" Type="DateTime" Precision="0" />
+          <Property Name="Position1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearOF2" Type="DateTime" Precision="0" />
+          <Property Name="Position2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearOF3" Type="DateTime" Precision="0" />
+          <Property Name="Position3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="self_Id_fk_fk" Type="Int32" />
+          <NavigationProperty Name="selfInformation" Relationship="Self.FK__Experianc__self___5441852A" FromRole="Experiance" ToRole="selfInformation" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Gnder_ID" />
+          </Key>
+          <Property Name="Gnder_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="selfe_Id" Type="Int32" />
+          <NavigationProperty Name="selfInformation" Relationship="Self.FK__Genders__selfe_I__5CD6CB2B" FromRole="Genders" ToRole="selfInformation" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="L_Id" />
+          </Key>
+          <Property Name="L_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="read1" Type="Boolean" />
+          <Property Name="write1" Type="Boolean" />
+          <Property Name="speak1" Type="Boolean" />
+          <Property Name="understand1" Type="Boolean" />
+          <Property Name="Language2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="read2" Type="Boolean" />
+          <Property Name="write2" Type="Boolean" />
+          <Property Name="speak2" Type="Boolean" />
+          <Property Name="understand2" Type="Boolean" />
+          <Property Name="Language3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="read3" Type="Boolean" />
+          <Property Name="write3" Type="Boolean" />
+          <Property Name="speak3" Type="Boolean" />
+          <Property Name="understand3" Type="Boolean" />
+          <Property Name="Language4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="read4" Type="Boolean" />
+          <Property Name="write4" Type="Boolean" />
+          <Property Name="speak4" Type="Boolean" />
+          <Property Name="understand4" Type="Boolean" />
+          <Property Name="self_FK" Type="Int32" />
+          <NavigationProperty Name="selfInformation" Relationship="Self.FK__Languages__self___4E88ABD4" FromRole="Languages" ToRole="selfInformation" />
+        </EntityType>
+        <EntityType Name="selfInformation">
+          <Key>
+            <PropertyRef Name="self_Id" />
+          </Key>
+          <Property Name="self_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MiddileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+          <Property Name="PhoneNumber" Type="Int32" />
+          <Property Name="PhoneNumber2" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PresentAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PermanentAdress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Educations" Relationship="Self.FK__Education__self___5165187F" FromRole="selfInformation" ToRole="Education" />
+          <NavigationProperty Name="Experiances" Relationship="Self.FK__Experianc__self___5441852A" FromRole="selfInformation" ToRole="Experiance" />
+          <NavigationProperty Name="Genders" Relationship="Self.FK__Genders__selfe_I__5CD6CB2B" FromRole="selfInformation" ToRole="Genders" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK__Languages__self___4E88ABD4" FromRole="selfInformation" ToRole="Languages" />
+        </EntityType>
+        <Association Name="FK__Education__self___5165187F">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="self_Id_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experianc__self___5441852A">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Experiance" Type="Self.Experiance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Experiance">
+              <PropertyRef Name="self_Id_fk_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Genders__selfe_I__5CD6CB2B">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Genders" Type="Self.Gender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Genders">
+              <PropertyRef Name="selfe_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Languages__self___4E88ABD4">
+          <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+          <End Role="Languages" Type="Self.Language" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="selfInformation">
+              <PropertyRef Name="self_Id" />
+            </Principal>
+            <Dependent Role="Languages">
+              <PropertyRef Name="self_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="REGISTRATIONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Educations" EntityType="Self.Education" />
+          <EntitySet Name="Experiances" EntityType="Self.Experiance" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="Languages" EntityType="Self.Language" />
+          <EntitySet Name="selfInformations" EntityType="Self.selfInformation" />
+          <AssociationSet Name="FK__Education__self___5165187F" Association="Self.FK__Education__self___5165187F">
+            <End Role="selfInformation" EntitySet="selfInformations" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experianc__self___5441852A" Association="Self.FK__Experianc__self___5441852A">
+            <End Role="selfInformation" EntitySet="selfInformations" />
+            <End Role="Experiance" EntitySet="Experiances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Genders__selfe_I__5CD6CB2B" Association="Self.FK__Genders__selfe_I__5CD6CB2B">
+            <End Role="selfInformation" EntitySet="selfInformations" />
+            <End Role="Genders" EntitySet="Genders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Languages__self___4E88ABD4" Association="Self.FK__Languages__self___4E88ABD4">
+            <End Role="selfInformation" EntitySet="selfInformations" />
+            <End Role="Languages" EntitySet="Languages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="REGISTRATIONModelStoreContainer" CdmEntityContainer="REGISTRATIONEntities">
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="REGISTRATIONModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="Edu_Id" ColumnName="Edu_Id" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Program_course" ColumnName="Program_course" />
+                <ScalarProperty Name="Elective" ColumnName="Elective" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+                <ScalarProperty Name="fromYear" ColumnName="fromYear" />
+                <ScalarProperty Name="Toyear" ColumnName="Toyear" />
+                <ScalarProperty Name="percentageYear" ColumnName="percentageYear" />
+                <ScalarProperty Name="GDate" ColumnName="GDate" />
+                <ScalarProperty Name="self_Id_fk" ColumnName="self_Id_fk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Experiances">
+            <EntityTypeMapping TypeName="REGISTRATIONModel.Experiance">
+              <MappingFragment StoreEntitySet="Experiance">
+                <ScalarProperty Name="Exp_Id" ColumnName="Exp_Id" />
+                <ScalarProperty Name="CompanyName1" ColumnName="CompanyName1" />
+                <ScalarProperty Name="YearOF1" ColumnName="YearOF1" />
+                <ScalarProperty Name="Position1" ColumnName="Position1" />
+                <ScalarProperty Name="CompanyName2" ColumnName="CompanyName2" />
+                <ScalarProperty Name="YearOF2" ColumnName="YearOF2" />
+                <ScalarProperty Name="Position2" ColumnName="Position2" />
+                <ScalarProperty Name="CompanyName3" ColumnName="CompanyName3" />
+                <ScalarProperty Name="YearOF3" ColumnName="YearOF3" />
+                <ScalarProperty Name="Position3" ColumnName="Position3" />
+                <ScalarProperty Name="self_Id_fk_fk" ColumnName="self_Id_fk_fk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="REGISTRATIONModel.Gender">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="Gnder_ID" ColumnName="Gnder_ID" />
+                <ScalarProperty Name="Gender1" ColumnName="Gender" />
+                <ScalarProperty Name="selfe_Id" ColumnName="selfe_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="REGISTRATIONModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="L_Id" ColumnName="L_Id" />
+                <ScalarProperty Name="Language1" ColumnName="Language1" />
+                <ScalarProperty Name="read1" ColumnName="read1" />
+                <ScalarProperty Name="write1" ColumnName="write1" />
+                <ScalarProperty Name="speak1" ColumnName="speak1" />
+                <ScalarProperty Name="understand1" ColumnName="understand1" />
+                <ScalarProperty Name="Language2" ColumnName="Language2" />
+                <ScalarProperty Name="read2" ColumnName="read2" />
+                <ScalarProperty Name="write2" ColumnName="write2" />
+                <ScalarProperty Name="speak2" ColumnName="speak2" />
+                <ScalarProperty Name="understand2" ColumnName="understand2" />
+                <ScalarProperty Name="Language3" ColumnName="Language3" />
+                <ScalarProperty Name="read3" ColumnName="read3" />
+                <ScalarProperty Name="write3" ColumnName="write3" />
+                <ScalarProperty Name="speak3" ColumnName="speak3" />
+                <ScalarProperty Name="understand3" ColumnName="understand3" />
+                <ScalarProperty Name="Language4" ColumnName="Language4" />
+                <ScalarProperty Name="read4" ColumnName="read4" />
+                <ScalarProperty Name="write4" ColumnName="write4" />
+                <ScalarProperty Name="speak4" ColumnName="speak4" />
+                <ScalarProperty Name="understand4" ColumnName="understand4" />
+                <ScalarProperty Name="self_FK" ColumnName="self_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="selfInformations">
+            <EntityTypeMapping TypeName="REGISTRATIONModel.selfInformation">
+              <MappingFragment StoreEntitySet="selfInformation">
+                <ScalarProperty Name="self_Id" ColumnName="self_Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddileName" ColumnName="MiddileName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+                <ScalarProperty Name="PermanentAdress" ColumnName="PermanentAdress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

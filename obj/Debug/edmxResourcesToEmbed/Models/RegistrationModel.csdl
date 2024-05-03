@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REGISTRATIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="Edu_Id" />
+    </Key>
+    <Property Name="Edu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Program_course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Elective" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CollegeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UniversityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fromYear" Type="DateTime" Precision="0" />
+    <Property Name="Toyear" Type="DateTime" Precision="0" />
+    <Property Name="percentageYear" Type="Int32" />
+    <Property Name="GDate" Type="DateTime" Precision="0" />
+    <Property Name="self_Id_fk" Type="Int32" />
+    <NavigationProperty Name="selfInformation" Relationship="Self.FK__Education__self___5165187F" FromRole="Education" ToRole="selfInformation" />
+  </EntityType>
+  <EntityType Name="Experiance">
+    <Key>
+      <PropertyRef Name="Exp_Id" />
+    </Key>
+    <Property Name="Exp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearOF1" Type="DateTime" Precision="0" />
+    <Property Name="Position1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearOF2" Type="DateTime" Precision="0" />
+    <Property Name="Position2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearOF3" Type="DateTime" Precision="0" />
+    <Property Name="Position3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="self_Id_fk_fk" Type="Int32" />
+    <NavigationProperty Name="selfInformation" Relationship="Self.FK__Experianc__self___5441852A" FromRole="Experiance" ToRole="selfInformation" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Gnder_ID" />
+    </Key>
+    <Property Name="Gnder_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="selfe_Id" Type="Int32" />
+    <NavigationProperty Name="selfInformation" Relationship="Self.FK__Genders__selfe_I__5CD6CB2B" FromRole="Genders" ToRole="selfInformation" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="L_Id" />
+    </Key>
+    <Property Name="L_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Language1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="read1" Type="Boolean" />
+    <Property Name="write1" Type="Boolean" />
+    <Property Name="speak1" Type="Boolean" />
+    <Property Name="understand1" Type="Boolean" />
+    <Property Name="Language2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="read2" Type="Boolean" />
+    <Property Name="write2" Type="Boolean" />
+    <Property Name="speak2" Type="Boolean" />
+    <Property Name="understand2" Type="Boolean" />
+    <Property Name="Language3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="read3" Type="Boolean" />
+    <Property Name="write3" Type="Boolean" />
+    <Property Name="speak3" Type="Boolean" />
+    <Property Name="understand3" Type="Boolean" />
+    <Property Name="Language4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="read4" Type="Boolean" />
+    <Property Name="write4" Type="Boolean" />
+    <Property Name="speak4" Type="Boolean" />
+    <Property Name="understand4" Type="Boolean" />
+    <Property Name="self_FK" Type="Int32" />
+    <NavigationProperty Name="selfInformation" Relationship="Self.FK__Languages__self___4E88ABD4" FromRole="Languages" ToRole="selfInformation" />
+  </EntityType>
+  <EntityType Name="selfInformation">
+    <Key>
+      <PropertyRef Name="self_Id" />
+    </Key>
+    <Property Name="self_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MiddileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="PhoneNumber2" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PresentAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PermanentAdress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Educations" Relationship="Self.FK__Education__self___5165187F" FromRole="selfInformation" ToRole="Education" />
+    <NavigationProperty Name="Experiances" Relationship="Self.FK__Experianc__self___5441852A" FromRole="selfInformation" ToRole="Experiance" />
+    <NavigationProperty Name="Genders" Relationship="Self.FK__Genders__selfe_I__5CD6CB2B" FromRole="selfInformation" ToRole="Genders" />
+    <NavigationProperty Name="Languages" Relationship="Self.FK__Languages__self___4E88ABD4" FromRole="selfInformation" ToRole="Languages" />
+  </EntityType>
+  <Association Name="FK__Education__self___5165187F">
+    <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="selfInformation">
+        <PropertyRef Name="self_Id" />
+      </Principal>
+      <Dependent Role="Education">
+        <PropertyRef Name="self_Id_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Experianc__self___5441852A">
+    <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+    <End Role="Experiance" Type="Self.Experiance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="selfInformation">
+        <PropertyRef Name="self_Id" />
+      </Principal>
+      <Dependent Role="Experiance">
+        <PropertyRef Name="self_Id_fk_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Genders__selfe_I__5CD6CB2B">
+    <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+    <End Role="Genders" Type="Self.Gender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="selfInformation">
+        <PropertyRef Name="self_Id" />
+      </Principal>
+      <Dependent Role="Genders">
+        <PropertyRef Name="selfe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Languages__self___4E88ABD4">
+    <End Role="selfInformation" Type="Self.selfInformation" Multiplicity="0..1" />
+    <End Role="Languages" Type="Self.Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="selfInformation">
+        <PropertyRef Name="self_Id" />
+      </Principal>
+      <Dependent Role="Languages">
+        <PropertyRef Name="self_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="REGISTRATIONEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Educations" EntityType="Self.Education" />
+    <EntitySet Name="Experiances" EntityType="Self.Experiance" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="selfInformations" EntityType="Self.selfInformation" />
+    <AssociationSet Name="FK__Education__self___5165187F" Association="Self.FK__Education__self___5165187F">
+      <End Role="selfInformation" EntitySet="selfInformations" />
+      <End Role="Education" EntitySet="Educations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Experianc__self___5441852A" Association="Self.FK__Experianc__self___5441852A">
+      <End Role="selfInformation" EntitySet="selfInformations" />
+      <End Role="Experiance" EntitySet="Experiances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Genders__selfe_I__5CD6CB2B" Association="Self.FK__Genders__selfe_I__5CD6CB2B">
+      <End Role="selfInformation" EntitySet="selfInformations" />
+      <End Role="Genders" EntitySet="Genders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Languages__self___4E88ABD4" Association="Self.FK__Languages__self___4E88ABD4">
+      <End Role="selfInformation" EntitySet="selfInformations" />
+      <End Role="Languages" EntitySet="Languages" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
