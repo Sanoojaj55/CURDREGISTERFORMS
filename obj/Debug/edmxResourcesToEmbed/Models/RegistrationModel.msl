@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="REGISTRATIONModelStoreContainer" CdmEntityContainer="REGISTRATIONEntities">
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="REGISTRATIONModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="Edu_Id" ColumnName="Edu_Id" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Program_course" ColumnName="Program_course" />
+          <ScalarProperty Name="Elective" ColumnName="Elective" />
+          <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="fromYear" ColumnName="fromYear" />
+          <ScalarProperty Name="Toyear" ColumnName="Toyear" />
+          <ScalarProperty Name="percentageYear" ColumnName="percentageYear" />
+          <ScalarProperty Name="GDate" ColumnName="GDate" />
+          <ScalarProperty Name="self_Id_fk" ColumnName="self_Id_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiances">
+      <EntityTypeMapping TypeName="REGISTRATIONModel.Experiance">
+        <MappingFragment StoreEntitySet="Experiance">
+          <ScalarProperty Name="Exp_Id" ColumnName="Exp_Id" />
+          <ScalarProperty Name="CompanyName1" ColumnName="CompanyName1" />
+          <ScalarProperty Name="YearOF1" ColumnName="YearOF1" />
+          <ScalarProperty Name="Position1" ColumnName="Position1" />
+          <ScalarProperty Name="CompanyName2" ColumnName="CompanyName2" />
+          <ScalarProperty Name="YearOF2" ColumnName="YearOF2" />
+          <ScalarProperty Name="Position2" ColumnName="Position2" />
+          <ScalarProperty Name="CompanyName3" ColumnName="CompanyName3" />
+          <ScalarProperty Name="YearOF3" ColumnName="YearOF3" />
+          <ScalarProperty Name="Position3" ColumnName="Position3" />
+          <ScalarProperty Name="self_Id_fk_fk" ColumnName="self_Id_fk_fk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="REGISTRATIONModel.Gender">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="Gnder_ID" ColumnName="Gnder_ID" />
+          <ScalarProperty Name="Gender1" ColumnName="Gender" />
+          <ScalarProperty Name="selfe_Id" ColumnName="selfe_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="REGISTRATIONModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="L_Id" ColumnName="L_Id" />
+          <ScalarProperty Name="Language1" ColumnName="Language1" />
+          <ScalarProperty Name="read1" ColumnName="read1" />
+          <ScalarProperty Name="write1" ColumnName="write1" />
+          <ScalarProperty Name="speak1" ColumnName="speak1" />
+          <ScalarProperty Name="understand1" ColumnName="understand1" />
+          <ScalarProperty Name="Language2" ColumnName="Language2" />
+          <ScalarProperty Name="read2" ColumnName="read2" />
+          <ScalarProperty Name="write2" ColumnName="write2" />
+          <ScalarProperty Name="speak2" ColumnName="speak2" />
+          <ScalarProperty Name="understand2" ColumnName="understand2" />
+          <ScalarProperty Name="Language3" ColumnName="Language3" />
+          <ScalarProperty Name="read3" ColumnName="read3" />
+          <ScalarProperty Name="write3" ColumnName="write3" />
+          <ScalarProperty Name="speak3" ColumnName="speak3" />
+          <ScalarProperty Name="understand3" ColumnName="understand3" />
+          <ScalarProperty Name="Language4" ColumnName="Language4" />
+          <ScalarProperty Name="read4" ColumnName="read4" />
+          <ScalarProperty Name="write4" ColumnName="write4" />
+          <ScalarProperty Name="speak4" ColumnName="speak4" />
+          <ScalarProperty Name="understand4" ColumnName="understand4" />
+          <ScalarProperty Name="self_FK" ColumnName="self_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="selfInformations">
+      <EntityTypeMapping TypeName="REGISTRATIONModel.selfInformation">
+        <MappingFragment StoreEntitySet="selfInformation">
+          <ScalarProperty Name="self_Id" ColumnName="self_Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddileName" ColumnName="MiddileName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+          <ScalarProperty Name="PermanentAdress" ColumnName="PermanentAdress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

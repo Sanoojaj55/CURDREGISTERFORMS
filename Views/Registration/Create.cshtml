@@ -1,0 +1,442 @@
+﻿@model RegistrationForms2.Models.selfInformation
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    body{
+
+
+
+    }
+</style>
+<h2>Create</h2>
+
+<div class="form-group">
+    <div class="container">
+        @using (Html.BeginForm("Create", "Register", FormMethod.Post))
+        {
+            
+        <div class="form-group">
+            @Html.HiddenFor(x => x.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(x => x.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+
+            </div>
+
+
+        </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.MiddileName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.MiddileName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.MiddileName, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.LastName, htmlAttributes: new { @class = "control-label col-md-2" });
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.DateofBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.DateofBirth, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.DateofBirth, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PhoneNumber2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.PhoneNumber2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber2, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PresentAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.PresentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.PresentAddress, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PermanentAdress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.PermanentAdress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.PermanentAdress, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+           
+            <div class="form-group">
+                @Html.LabelFor(x => x.Gender1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Gender1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Gender1, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Language1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Language1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Language1, "", new { @class = "text-danger" })
+
+                </div>
+                <div>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("read1", false)
+                        Read
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("write1", false)
+                        Write
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("speak1", false)
+                        Speak
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("understand1", false)
+                        Understand
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Language2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Language2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Language2, "", new { @class = "text-danger" })
+
+                </div>
+                <div>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("read2", false)
+                        Read
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("write2", false)
+                        Write
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("speak2", false)
+                        Speak
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("understand2", false)
+                        Understand
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Language3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Language3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Language3, "", new { @class = "text-danger" })
+
+                </div>
+                <div>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("read3", false)
+                        Read
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("write3", false)
+                        Write
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("speak3", false)
+                        Speak
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("understand3", false)
+                        Understand
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Language4, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Language4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Language4, "", new { @class = "text-danger" })
+
+                </div>
+                <div>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("read4", false)
+                        Read
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("write4", false)
+                        Write
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("speak4", false)
+                        Speak
+                    </label>
+                    <label class="checkbox-inline">
+                        @Html.CheckBox("understand4", false)
+                        Understand
+                    </label>
+                </div>
+
+
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Degree, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Degree, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Degree, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Degree, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Degree, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Degree, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Course, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Course, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Course, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Program_course, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Program_course, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Program_course, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Elective, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Elective, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Elective, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CollegeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.CollegeName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.CollegeName, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.UniversityName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.UniversityName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.UniversityName, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.fromYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.fromYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.fromYear, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Toyear, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Toyear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Toyear, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.percentageYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.percentageYear, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.percentageYear, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.GDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.GDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.GDate, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CompanyName1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.CompanyName1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.CompanyName1, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.YearOF1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.YearOF1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.YearOF1, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Position1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Position1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Position1, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CompanyName2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.CompanyName2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.CompanyName2, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.YearOF2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.YearOF2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.YearOF2, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Position2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Position2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Position2, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CompanyName3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.CompanyName3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.CompanyName3, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.YearOF3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.YearOF3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.YearOF3, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Position3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(x => x.Position3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(x => x.Position3, "", new { @class = "text-danger" })
+
+                </div>
+
+
+            </div>
+
+            <input type="submit" value="Create" class="btn btn-block btn-danger" />
+        }
+    </div>
+</div>
+
